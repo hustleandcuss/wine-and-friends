@@ -1,0 +1,14 @@
+{
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-wine-and-friends-prod-210129-authRole",
+            "UnauthRoleArn": "arn:aws:iam::090613299933:role/amplify-wine-and-friends-prod-210129-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::090613299933:role/amplify-wine-and-friends-prod-210129-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-wine-and-friends-prod-210129-deployment",
+            "UnauthRoleName": "amplify-wine-and-friends-prod-210129-unauthRole",
+            "StackName": "amplify-wine-and-friends-prod-210129",
+            "StackId": "arn:aws:cloudformation:eu-west-1:090613299933:stack/amplify-wine-and-friends-prod-210129/27b7c6f0-954c-11ea-917c-02dbc193ed28"
+        }
+    }
+}
