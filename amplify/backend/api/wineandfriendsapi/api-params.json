@@ -6,6 +6,13 @@
             "privacy": {
                 "open": true
             }
+        },
+        {
+            "name": "/random2",
+            "lambdaFunction": "randomwine2",
+            "privacy": {
+                "open": true
+            }
         }
     ],
     "resourceName": "wineandfriendsapi",
@@ -13,6 +20,9 @@
     "functionArns": [
         {
             "lambdaFunction": "randomwine"
+        },
+        {
+            "lambdaFunction": "randomwine2"
         }
     ],
     "privacy": {
@@ -29,6 +39,15 @@
                 "Name",
                 "Arn"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "randomwine2",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
         }
-    ]
+    ],
+    "uuid": "ba20a165"
 }

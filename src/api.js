@@ -12,7 +12,7 @@ import { endpoint } from "@/config.js";
 export function getRandomWine() {
   return new Promise(function(resolve, reject) {
     axios
-      .get(endpoint + "/random")
+      .get(endpoint + "/random2")
       .then(response => {
         resolve({
           wine: response.data
