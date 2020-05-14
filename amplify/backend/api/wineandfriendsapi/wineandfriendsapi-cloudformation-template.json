@@ -616,7 +616,7 @@
         
         
         
-      "DeploymentAPIGWwineandfriendsapiba20a165": {
+      "DeploymentAPIGWwineandfriendsapi5f51a8e8": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
