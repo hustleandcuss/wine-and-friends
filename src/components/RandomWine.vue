@@ -1,9 +1,8 @@
 <template>
   <div class="start">
     <button @click="send">Get random wine recommendation</button>
-    <p>
-      {{ wine }}
-    </p>
+    <h5>{{ wine }}</h5>
+
   </div>
 </template>
 
@@ -29,7 +28,7 @@ export default {
       .catch(error => {
         component.error = error.messages;
       });
-    }
+    },
   }
 }
 </script>
