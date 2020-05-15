@@ -8,15 +8,18 @@
     <RandomWine/>
     <h3>White Wine</h3>
     <h3>Red Wine</h3>
+    <DrunkFast/>
   </div>
 </template>
 
 <script>
 import RandomWine from './RandomWine.vue'
+import DrunkFast from "./DrunkFast";
 
 export default {
   name: 'StartPage',
   components: {
+    DrunkFast,
     RandomWine,
   }
 }
