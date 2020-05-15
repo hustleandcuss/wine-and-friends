@@ -15,6 +15,13 @@
             }
         },
         {
+            "name": "/filter",
+            "lambdaFunction": "FilterLambda",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
             "name": "/drunkfast",
             "lambdaFunction": "drunkfast",
             "privacy": {
@@ -30,6 +37,9 @@
         },
         {
             "lambdaFunction": "randomwine2"
+        },
+        {
+            "lambdaFunction": "FilterLambda"
         },
         {
             "lambdaFunction": "drunkfast"
@@ -60,6 +70,14 @@
         },
         {
             "category": "function",
+            "resourceName": "FilterLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
             "resourceName": "drunkfast",
             "attributes": [
                 "Name",
@@ -67,5 +85,5 @@
             ]
         }
     ],
-    "uuid": "a41f6270"
+    "uuid": "7c95880c"
 }

@@ -15,6 +15,11 @@
 			"providerPlugin": "awscloudformation",
 			"service": "Lambda"
 		},
+		"FilterLambda": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
+		},
 		"transferLambda": {
 			"build": true,
 			"providerPlugin": "awscloudformation",
@@ -55,6 +60,14 @@
 						"Name",
 						"Arn"
 					]
+				},
+				{
+					"category": "function",
+					"resourceName": "FilterLambda",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
 				}
 			]
 		},
@@ -74,9 +87,23 @@
 		}
 	},
 	"storage": {
-		"alkiskatalogen": {
+		"alkisKatalogen": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
+		},
+		"drunkfast": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "drunkfast",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	}
 }
