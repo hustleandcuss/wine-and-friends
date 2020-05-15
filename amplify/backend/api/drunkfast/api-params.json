@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/drunkfast",
+            "lambdaFunction": "drunkfast",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "drunkfast",
+    "apiName": "drunkfast",
+    "functionArns": [
+        {
+            "lambdaFunction": "drunkfast"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-wine-and-friends-prod-210129-authRole",
+        "unAuthRoleName": "amplify-wine-and-friends-prod-210129-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "drunkfast",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

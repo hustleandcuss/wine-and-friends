@@ -9,6 +9,11 @@
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true
+		},
+		"drunkfast": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
 		}
 	},
 	"api": {
@@ -39,6 +44,20 @@
 		"alkisKatalogen": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
+		},
+		"drunkfast": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "drunkfast",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	}
 }
