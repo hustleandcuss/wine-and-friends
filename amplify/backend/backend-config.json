@@ -36,6 +36,14 @@
 						"Name",
 						"Arn"
 					]
+				},
+				{
+					"category": "function",
+					"resourceName": "drunkfast",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
 				}
 			]
 		}
