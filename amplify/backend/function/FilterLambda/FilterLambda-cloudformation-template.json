@@ -61,7 +61,7 @@
                     
                 }
             },
-            "Role": { "Fn::GetAtt" : ["LambdaExecutionRole", "Arn"] },
+            "Role": { "Fn::GetAtt" : ["LambdaExecutionRole", "DynamoDBRole", "Arn"] },
             "Runtime": "python3.8",
             "Timeout": "25"
           }
@@ -125,6 +125,64 @@
                     ]
                 }
             }
+        },
+        "DynamoDBRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName": {
+                    "Fn::If": [
+                        "ShouldNotCreateEnvResources",
+                        "wineandfriendsLambdaRolecefb4321",
+                        {
+
+                            "Fn::Join": [
+                                "",
+                                [
+                                    "wineandfriendsLambdaRolecefb4321",
+                                    "-",
+                                    {
+                                        "Ref": "env"
+                                    }
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": [
+                                    "lambda.amazonaws.com"
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+        ,"dynamodbpolicy": {
+            "DependsOn": ["DynamoDBRole"],
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": "dynamodb-policy",
+                "Roles": [{ "Ref": "DynamoDBRole" }],
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action":["dynamodb:*"],
+                            "Resource": { "Fn::Sub" : [ "arn:aws:logs:${region}:${account}:log-group:/aws/lambda/${lambda}:log-stream:*", { "region": {"Ref": "AWS::Region"},  "account": {"Ref": "AWS::AccountId"}, "lambda": {"Ref": "LambdaFunction"}} ]}
+                        }
+                    ]
+                }
+            }
         }
         
                          
@@ -146,6 +204,11 @@
         "LambdaExecutionRole": {
             "Value": {
                 "Ref": "LambdaExecutionRole"
+            }
+        },
+        "DynamoDBRole": {
+            "Value": {
+                "Ref": "DynamoDBRole"
             }
         }
           

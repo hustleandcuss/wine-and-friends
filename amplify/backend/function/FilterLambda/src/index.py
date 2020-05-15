@@ -1,6 +1,8 @@
+import boto3
 def handler(event, context):
+  client = boto3.client('dynamodb')
   print('received event:')
   print(event)
   return {
-    'message': 'Hello from your new Amplify Python lambda!'
+    "tables":str(client.list_tables())
   }
