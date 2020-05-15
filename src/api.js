@@ -24,6 +24,21 @@ export function getRandomWine() {
   });
 }
 
+export function getDrunkFast() {
+    return new Promise(function(resolve, reject) {
+        axios
+            .get(endpoint + "/drunkfast")
+            .then(response => {
+                resolve({
+                    message: response.data
+                });
+            })
+            .catch(error => {
+                reject(error);
+            });
+    });
+}
+
 // export function feedbackPhoto(photo, dog) {
 //   return new Promise(function(resolve, reject) {
 //     axios
@@ -41,5 +56,6 @@ export function getRandomWine() {
 // }
 
 export default {
-  getRandomWine
+  getRandomWine,
+    getDrunkFast
 };
