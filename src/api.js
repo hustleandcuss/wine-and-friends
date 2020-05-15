@@ -25,17 +25,25 @@ export function getRandomWine() {
 }
 
 export function getDrunkFast() {
-    return new Promise(function(resolve, reject) {
-        axios
-            .get(endpoint + "/drunkfast")
-            .then(response => {
-                resolve({
-                    message: response.data
+    navigator.geolocation.getCurrentPosition(pos => {
+        const params = {
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude,
+            time: Date.now()
+        }
+
+        return new Promise(function(resolve, reject) {
+            axios
+                .get(endpoint + "/drunkfast", { params })
+                .then(response => {
+                    resolve({
+                        message: response.data
+                    });
+                })
+                .catch(error => {
+                    reject(error);
                 });
-            })
-            .catch(error => {
-                reject(error);
-            });
+        });
     });
 }
 

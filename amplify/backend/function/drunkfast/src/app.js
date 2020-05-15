@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
 
 app.get('/drunkfast', function(req, res) {
   // Add your code here
-  res.json({success: 'You got drunk fast!!', url: req.url});
+  res.json({success: 'You got drunk fast!! ' + req.params + ' body: ' + req.body, url: req.url});
 });
 
 app.get('/drunkfast/*', function(req, res) {
