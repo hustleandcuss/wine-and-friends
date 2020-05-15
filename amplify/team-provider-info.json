@@ -8,7 +8,14 @@
             "DeploymentBucketName": "amplify-wine-and-friends-prod-210129-deployment",
             "UnauthRoleName": "amplify-wine-and-friends-prod-210129-unauthRole",
             "StackName": "amplify-wine-and-friends-prod-210129",
-            "StackId": "arn:aws:cloudformation:eu-west-1:090613299933:stack/amplify-wine-and-friends-prod-210129/27b7c6f0-954c-11ea-917c-02dbc193ed28"
+            "StackId": "arn:aws:cloudformation:eu-west-1:090613299933:stack/amplify-wine-and-friends-prod-210129/27b7c6f0-954c-11ea-917c-02dbc193ed28",
+            "AmplifyAppId": "d391ilymoya3f2"
+        },
+        "categories": {
+            "function": {
+                "randomwine": {},
+                "randomwine2": {}
+            }
         }
     }
 }
