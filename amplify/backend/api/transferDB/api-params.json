@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/transfer",
+            "lambdaFunction": "transferLambda",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "transferDB",
+    "apiName": "transferDB",
+    "functionArns": [
+        {
+            "lambdaFunction": "transferLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-wine-and-friends-prod-210129-authRole",
+        "unAuthRoleName": "amplify-wine-and-friends-prod-210129-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "transferLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

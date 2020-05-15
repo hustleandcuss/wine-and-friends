@@ -14,6 +14,25 @@
 			"build": true,
 			"providerPlugin": "awscloudformation",
 			"service": "Lambda"
+		},
+		"transferLambda": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "alkiskatalogen",
+					"attributes": [
+						"Name",
+						"Arn"
+					],
+					"attributeEnvMap": {
+						"Name": "TABLE_NAME",
+						"Arn": "TABLE_ARN"
+					}
+				}
+			]
 		}
 	},
 	"api": {
@@ -32,6 +51,20 @@
 				{
 					"category": "function",
 					"resourceName": "randomwine2",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"transferDB": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "transferLambda",
 					"attributes": [
 						"Name",
 						"Arn"
