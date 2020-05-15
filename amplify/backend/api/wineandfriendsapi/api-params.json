@@ -13,6 +13,13 @@
             "privacy": {
                 "open": true
             }
+        },
+        {
+            "name": "/filter",
+            "lambdaFunction": "FilterLambda",
+            "privacy": {
+                "open": true
+            }
         }
     ],
     "resourceName": "wineandfriendsapi",
@@ -23,6 +30,9 @@
         },
         {
             "lambdaFunction": "randomwine2"
+        },
+        {
+            "lambdaFunction": "FilterLambda"
         }
     ],
     "privacy": {
@@ -47,7 +57,15 @@
                 "Name",
                 "Arn"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "FilterLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
         }
     ],
-    "uuid": "5f51a8e8"
+    "uuid": "7c95880c"
 }
